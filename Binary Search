@@ -1,0 +1,25 @@
+class Solution {
+    public int searchFirst(int[] nums, int target) {
+        int lo = 0;
+        int hi = nums.length - 1;
+        int result = -1;  // yahan store karenge minimum index
+        
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            
+            if (nums[mid] == target) {
+                result = mid;   // match mila
+                hi = mid - 1;   // left side me aur check karo (minimum index ke liye)
+            } 
+            else if (nums[mid] < target) {
+                lo = mid + 1;
+            } 
+            else {
+                hi = mid - 1;
+            }
+        }
+        
+        return result; // agar mila to index, warna -1
+    }
+}
+//agar hme target ka minimum index chahiye tb ke liye 
