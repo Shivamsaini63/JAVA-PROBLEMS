@@ -1,0 +1,27 @@
+import java.util.*;public class Sollution{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int matrix[][]=new int [n][m];
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        int transpose[][]=new int[m][n];
+        //transpose logic
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                transpose[j][i]=matrix[i][j];
+            }
+        }
+        //print transpose matrix
+        for(int i=0; i<transpose.length; i++){
+            for(int j=0; j<transpose[0].length; j++){
+                System.out.print(transpose[i][j] +" ");
+            }
+            System.out.println();
+        }
+    }
+}  
