@@ -1,0 +1,40 @@
+import java.util.Scanner;class Sollution{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int matrix[][]=new int [n][n];
+        for (int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        int topR=0;
+        int bottomR=matrix.length-1;
+        int leftC=0;
+        int rightC=matrix[0].length-1;
+        while(topR<bottomR){
+             //swap
+             for(int i=0; i<n; i++){
+                int temp=matrix[topR][i];
+        matrix[topR][i]=matrix[bottomR][i];
+        matrix[bottomR][i]=temp;
+             }
+             topR++;
+             bottomR--;
+        }
+        //transpose logic
+        int transpose[][]=new int [n][n];
+        for (int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                transpose[j][i]=matrix[i][j];
+            }
+        }
+        //printint final 90 degree rotated matrix
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                System.out.print(transpose[i][j]+" ");
+            }
+            System.out.println(" ");
+        }
+    }
+}
