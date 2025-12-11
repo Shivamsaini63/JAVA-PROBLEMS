@@ -1,0 +1,35 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+import java.util.Scanner;
+
+public class Sollution {
+   public Sollution() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      int var2 = var1.nextInt();
+      int[] var3 = new int[var2];
+
+      int var4;
+      for(var4 = 0; var4 < var2; ++var4) {
+         var3[var4] = var1.nextInt();
+      }
+
+      var4 = 0;
+      int var5 = var2 - 1;
+      if (var3[var4] < var3[var5]) {
+         System.out.println("Minimum number is:" + var3[var4]);
+      }
+
+      while(var4 <= var5) {
+         int var6 = var4 + (var5 - var4) / 2;
+         if (var3[var6] > var3[var5]) {
+            var4 = var6 + 1;
+         } else {
+            var5 = var6;
+         }
+      }
+
+      System.out.println("Minimum number is:" + var3[var4]);
+   }
+}
